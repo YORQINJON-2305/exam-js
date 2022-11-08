@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="./main.css">
+  <title> Exam - 5 || Road Signs</title>
+</head>
+<body>
+<section class="main-section bg-dark">
+  <div class="container">
+    <div class="wrapper">
+      <form class="test-form" action="#" method="post">
+        <select class="level-select form-select mb-5 ">
+          <option class="easy" value="easy">Easy</option>
+          <option class="normal" value="normal">Normal</option>
+          <option class="hard" value="hard">Hard</option>
+        </select>
+        <select class="time-select form-select mb-5">
+          <option class="three" value="180">3 min</option>
+          <option class="five" value="300">5 min</option>
+          <option class="eight" value="600">10 min</option>
+        </select>
+        <div class="d-flex justify-content-center">
+          <button class="ready-btn">Let's go</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!--Modal-->
+<div class="test-modal">
+  <div class="container">
+    <button class="close-test-modal btn btn-secondary">Back</button>
+    <div class="d-flex justify-content-between mb-3">
+      <p class="mb-0">Score: <strong class="user-score">0</strong></p>
+      <p class="question-counter"></p>
+      <strong class="test-time"></strong>
+    </div>
+    <div class="question-wrap text-center">
+      <h3 class="question-text"></h3>
+    </div>
+    <ul class="sign-list list-unstyled"></ul>
+  </div>
+</div>
+
+<div class="game-over-wrap">
+  <div class="container">
+    <div class="over-info-wrap text-center">
+      <h2>Game Over</h2>
+      <button class="refresh-btn btn btn-success">New Game</button>
+    </div>
+  </div>
+</div>
+<!-- TEMPLATE -->
+<template class="img-template">
+  <li class="question-item">
+    <img class="sign-img img-fluid" src="" alt="">
+    <img class="true-mark" src="./images/checkmark.gif" alt="">
+  </li>
+</template>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+
+
+
+
+  <!-- Kerakli Array shu fileda -->
+  <script src="./signs.js"></script>
+
+  <!-- Code yoziladigan js file shu -->
+  <script src="./main.js"></script>
+</body>
+</html>
