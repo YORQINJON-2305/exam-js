@@ -16,19 +16,19 @@ const elSignList = elTestModal.querySelector(".sign-list");
 const elSignTemplate = document.querySelector(".img-template").content;
 
 //get game over tags
-const elGameOverWrap = document.querySelector('.game-over-wrap');
-const elRefreshBtn = elGameOverWrap.querySelector('.refresh-btn');
+const elGameOverWrap = document.querySelector(".game-over-wrap");
+const elGameOverBtn = elGameOverWrap.querySelector(".lose-btn");
 
 //get winner modal tags
 const elWinnerModal = document.querySelector(".winner-wrap");
-const elWinnerBtn = document.querySelector(".replay-btn");
+const elWinnerBtn = document.querySelector(".winner-btn");
 const elUserResult = document.querySelector(".user-result-text");
 
 // get all sounds
 const trueSound = new Audio("./sounds/true.mp3");
 const falseSound = new Audio("./sounds/false.mp3");
 const winnerSound = new Audio("./sounds/win.wav");
-const gameOverSound = new  Audio("./sounds/game-over.wav")
+const gameOverSound = new  Audio("./sounds/game-over-two.ogg")
 
 //Global fragment
 const globalFragment = document.createDocumentFragment();
@@ -161,7 +161,6 @@ function counterEnd(){
 
 function renderSignImg(allSymbols){
     elSignList.innerHTML = "";
-
     allSymbols.forEach(item => {
         const signTemplateClone = elSignTemplate.cloneNode(true);
         signTemplateClone.querySelector(".question-item").dataset.id = item.id;
@@ -176,8 +175,15 @@ function renderSignImg(allSymbols){
 //Replay btn
 elWinnerBtn.addEventListener("click", function (){
     window.location.reload();
-})
+});
 
+//Game over replay btn
+elGameOverBtn.addEventListener("click", function (){
+    window.location.reload();
+});
+
+
+//End time
 function endTime(){
     elTestModal.classList.add("d-none");
     elGameOverWrap.classList.add("d-flex");
